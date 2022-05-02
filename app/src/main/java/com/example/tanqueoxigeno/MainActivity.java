@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         datosBotellasCliente(cliente1.getCliente_id());
                         }
                     }
+
                 }else{
                     Log.e("entreElse", "-------->");
                    // mensaje("else wey");
@@ -102,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("http://orangecodecol.com/Botellasgas/botella/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        Intent intent = new Intent(this, Principal.class);
+        intent.putExtra("cliente_id",idCliente);
+        startActivity(intent);
 
         JSONObject jsonObject= new JSONObject();
         try {

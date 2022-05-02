@@ -20,7 +20,7 @@
    </EditText>
 
    <EditText
-       android:text="123"
+       android:text="12345"
        android:id="@+id/editContra"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
