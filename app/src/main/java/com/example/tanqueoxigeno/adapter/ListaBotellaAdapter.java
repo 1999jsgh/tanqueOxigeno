@@ -1,5 +1,7 @@
 package com.example.tanqueoxigeno.adapter;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +18,14 @@ import java.util.ArrayList;
 public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapter.ViewHolder>{
 
     private ArrayList<Botella> dataset;
+    private Context context;
+    private RecyclerViewClickListener listener;
+    private Botella b;
 
-    public ListaBotellaAdapter() {
+
+    public ListaBotellaAdapter(Context context, RecyclerViewClickListener listener) {
+        this.listener=listener;
+        this.context=context;
         dataset=new ArrayList<>();
     }
 
@@ -30,8 +38,10 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Botella b=dataset.get(position);
-        holder.botella_id.setText(b.getBotella_id());
+        Log.e("posicion","------->"+position);
+         b=dataset.get(position);
+
+        holder.botella_id.setText(String.valueOf(b.getBotella_id()));
         holder.codigo.setText(b.getCodigo());
         holder.valorManometro.setText(b.getValorManometro());
         holder.valorRecarga.setText(b.getValorRecarga());
@@ -40,6 +50,18 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
     @Override
     public int getItemCount() {
         return dataset.size();
+    }
+
+    public void adicionarListaBotella(ArrayList<Botella> listaBotella) {
+
+            Log.e("lista","---->"+listaBotella);
+
+        dataset.addAll(listaBotella);
+        notifyDataSetChanged();
+    }
+
+    public interface RecyclerViewClickListener {
+        void onClick(View view, int position);
     }
 
     public  class ViewHolder extends RecyclerView.ViewHolder {

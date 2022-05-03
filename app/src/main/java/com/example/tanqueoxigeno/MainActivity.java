@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         Cliente cliente1=Globalvar.datosCliente.get(i);
                         if(cliente1.getCliente_id() !=0){
                         datosBotellasCliente(cliente1.getCliente_id());
+                        Log.e("tamanoSize","-------------->"+Globalvar.datosCliente.size());
                         }
                     }
 
@@ -100,40 +101,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void datosBotellasCliente(int idCliente) {
-        Retrofit retrofit= new Retrofit.Builder()
-                .baseUrl("http://orangecodecol.com/Botellasgas/botella/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
+        Log.e("LLAMADOINTENTT","-------------------->");
         Intent intent = new Intent(this, Principal.class);
         intent.putExtra("cliente_id",idCliente);
         startActivity(intent);
 
-        JSONObject jsonObject= new JSONObject();
-        try {
-            Log.e("CLIENTEID", String.valueOf(idCliente));
-            jsonObject.put("cliente_id", idCliente);
-        }catch (JSONException e) {
-            e.printStackTrace();
-        }
-        RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
-        Api myCall= retrofit.create(Api.class);
-        Call<ArrayList<Botella>>call =myCall.getDatosBotella(body);
-
-        call.enqueue(new Callback<ArrayList<Botella>>() {
-            @Override
-            public void onResponse(Call<ArrayList<Botella>> call, Response<ArrayList<Botella>> response) {
-                if(response.isSuccessful()){
-                    Globalvar.botella=response.body();
-                    Log.e("Botella",response.body().toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<Botella>> call, Throwable t) {
-
-            }
-        });
 
     }
 

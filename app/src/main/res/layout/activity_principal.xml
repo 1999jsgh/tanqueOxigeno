@@ -40,13 +40,25 @@
 
     </Button>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="264dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@+id/button"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@+id/button"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
