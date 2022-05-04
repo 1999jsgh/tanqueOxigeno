@@ -50,7 +50,9 @@ public class RegistrarVenta extends AppCompatActivity {
             public void onClick(View view) {
                 if(parametros!=null){
                     try {
+
                         obtenerDatosBotella(Integer.valueOf(botellaId),monto.getText().toString(),fecha.getText().toString());
+
                     }catch(Exception e){
 
                     }
@@ -60,7 +62,13 @@ public class RegistrarVenta extends AppCompatActivity {
 
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//    }
+
     private void obtenerDatosBotella(Integer botella_id, String monto, String fecha) {
+
         Retrofit retrofit= new Retrofit.Builder()
                 .baseUrl("http://orangecodecol.com/Botellasgas/venta/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -68,7 +76,6 @@ public class RegistrarVenta extends AppCompatActivity {
 
         JSONObject jsonObject= new JSONObject();
         try {
-            Log.e("botella_idDENTRO", String.valueOf(botella_id));
             jsonObject.put("botella_id", botella_id);
             jsonObject.put("monto", monto);
             jsonObject.put("fecha", fecha);
@@ -76,9 +83,11 @@ public class RegistrarVenta extends AppCompatActivity {
         }catch (JSONException e) {
             e.printStackTrace();
         }
+
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
         Api myCall= retrofit.create(Api.class);
         Call<ArrayList<Venta>> call =myCall.registarVenta(body);
+
 
       call.enqueue(new Callback<ArrayList<Venta>>() {
           @Override
@@ -87,12 +96,15 @@ public class RegistrarVenta extends AppCompatActivity {
                   Globalvar.venta=response.body();
 
               }
+
           }
 
           @Override
           public void onFailure(Call<ArrayList<Venta>> call, Throwable t) {
-              Log.e("Error","Error al traer Datos"+t.getMessage());
+
           }
       });
+
+
     }
 }

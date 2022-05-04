@@ -15,6 +15,12 @@
         android:theme="@style/Theme.TanqueOxigeno"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".RegistrarBotella"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarCliente"
+            android:exported="false" />
+        <activity
             android:name=".RegistarMantenimiento"
             android:exported="false" />
         <activity

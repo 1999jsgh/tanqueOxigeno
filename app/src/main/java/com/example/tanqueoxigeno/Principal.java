@@ -13,8 +13,10 @@ import android.widget.Button;
 import com.example.tanqueoxigeno.adapter.ListaBotellaAdapter;
 import com.example.tanqueoxigeno.botella.Botella;
 import com.example.tanqueoxigeno.botella.BotellaDetalles;
+import com.example.tanqueoxigeno.estado.Estado;
 import com.example.tanqueoxigeno.form.Api;
 import com.example.tanqueoxigeno.form.Globalvar;
+import com.example.tanqueoxigeno.tamano.Tamano;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +35,7 @@ public class Principal extends AppCompatActivity {
 
     private RecyclerView recyclerview;
     private Button btnVencimiento;
+    private Button btnBotella;
     private ListaBotellaAdapter listaBotellaAdapter;
     private ListaBotellaAdapter.RecyclerViewClickListener listener;
 
@@ -44,6 +47,8 @@ public class Principal extends AppCompatActivity {
 
         recyclerview= findViewById(R.id.recyclerview);
         btnVencimiento=findViewById(R.id.button);
+        btnBotella=findViewById(R.id.btnBotella);
+
 
         listaBotellaAdapter=new ListaBotellaAdapter(this, listener);
         recyclerview.setAdapter(listaBotellaAdapter);
@@ -51,10 +56,12 @@ public class Principal extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(layoutManager);
 
+
         Bundle parametros=this.getIntent().getExtras();
         if(parametros!=null){
             try {
                 obtenerDatosBotella(parametros.getInt("cliente_id"));
+
             }catch(Exception e){
 
             }
@@ -66,8 +73,24 @@ public class Principal extends AppCompatActivity {
             }
         });
 
+    btnBotella.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            datosEstadoTamano();
+
+        }
+    });
+
+
 
         setOnClickListiner();
+    }
+
+    private void datosEstadoTamano() {
+
+        Intent intent = new Intent(this, RegistrarBotella.class);
+        startActivity(intent);
+
     }
 
     private void registrarVencimiento() {
@@ -98,6 +121,22 @@ public class Principal extends AppCompatActivity {
             }
         };
     }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        Bundle parametros=this.getIntent().getExtras();
+//        if(parametros!=null){
+//            try {
+//                obtenerDatosBotella(Globalvar.cliente_id);
+//                Log.e("IdCliente","--------->"+Globalvar.cliente_id);
+//
+//            }catch(Exception e){
+//
+//            }
+//        }
+//    }
 
     private void obtenerDatosBotella(int cliente_id) {
         Retrofit retrofit= new Retrofit.Builder()

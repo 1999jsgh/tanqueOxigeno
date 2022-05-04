@@ -1,5 +1,7 @@
 package com.example.tanqueoxigeno.botella;
 
+import static com.example.tanqueoxigeno.form.Globalvar.botella;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +15,7 @@ import com.example.tanqueoxigeno.Principal;
 import com.example.tanqueoxigeno.R;
 import com.example.tanqueoxigeno.RegistarMantenimiento;
 import com.example.tanqueoxigeno.RegistrarVenta;
+import com.example.tanqueoxigeno.adapter.ListaBotellaAdapter;
 import com.example.tanqueoxigeno.cliente.Cliente;
 import com.example.tanqueoxigeno.form.Api;
 import com.example.tanqueoxigeno.form.Globalvar;
@@ -81,6 +84,7 @@ public class BotellaDetalles extends AppCompatActivity {
                 if(parametros!=null){
                     try {
                         Eliminar(botellaId);
+                      finish();
                     }catch(Exception e){
 
                     }
@@ -152,6 +156,7 @@ public class BotellaDetalles extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Globalvar.botella_id=response.body();
                 }
+
             }
 
             @Override

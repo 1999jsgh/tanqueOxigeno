@@ -2,7 +2,7 @@ package com.example.tanqueoxigeno.mantenimiento;
 
 public class Mantenimiento {
     private int botella_id;
-    private int tipoMantenimiento_id;
+    private String tipoMantenimiento;
     private String fechaMantenimiento;
     private String monto;
 
@@ -14,12 +14,12 @@ public class Mantenimiento {
         this.botella_id = botella_id;
     }
 
-    public int getTipoMantenimiento_id() {
-        return tipoMantenimiento_id;
+    public String getTipoMantenimiento() {
+        return tipoMantenimiento;
     }
 
-    public void setTipoMantenimiento_id(int tipoMantenimiento_id) {
-        this.tipoMantenimiento_id = tipoMantenimiento_id;
+    public void setTipoMantenimiento(String tipoMantenimiento) {
+        this.tipoMantenimiento = tipoMantenimiento;
     }
 
     public String getFechaMantenimiento() {
@@ -42,7 +42,7 @@ public class Mantenimiento {
     public String toString() {
         return "Mantenimiento{" +
                 "botella_id=" + botella_id +
-                ", tipoMantenimiento_id=" + tipoMantenimiento_id +
+                ", tipoMantenimiento_id=" + tipoMantenimiento +
                 ", fechaMantenimiento='" + fechaMantenimiento + '\'' +
                 ", monto='" + monto + '\'' +
                 '}';

@@ -40,7 +40,6 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Log.e("posicion","------->"+position);
          b=dataset.get(position);
 
         holder.botella_id.setText(String.valueOf(b.getBotella_id()));

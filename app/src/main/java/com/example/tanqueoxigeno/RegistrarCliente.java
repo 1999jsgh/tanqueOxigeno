@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.tanqueoxigeno.form.Api;
 
@@ -22,13 +21,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegistarCliente extends AppCompatActivity {
+public class RegistrarCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registar_cliente);
-        Button b_registros = findViewById(R.id.btnRegistrar);
+        setContentView(R.layout.activity_registrar_cliente);
+
+        Button btnGuardarCliente = findViewById(R.id.btnGuardarCliente);
         EditText nombre=findViewById(R.id.nombre);
         EditText apellido=findViewById(R.id.apellido);
         EditText cedula=findViewById(R.id.cedula);
@@ -38,7 +38,7 @@ public class RegistarCliente extends AppCompatActivity {
         EditText contrasena=findViewById(R.id.contrasena);
 
 
-        b_registros.setOnClickListener(new View.OnClickListener() {
+        btnGuardarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registrarCliente(
@@ -50,6 +50,7 @@ public class RegistarCliente extends AppCompatActivity {
                         correo.getText().toString(),
                         contrasena.getText().toString()
                 );
+                finish();
             }
         });
     }
@@ -90,13 +91,8 @@ public class RegistarCliente extends AppCompatActivity {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.e("Error","Error al Registrar Datos"+t.getMessage());
-                mensaje("Error al Registrar Cliente");
+
             }
         });
     }
-    private void mensaje(String mensaje) {
-        Toast toast1 = Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT);
-        toast1.show();
-    }
-
 }

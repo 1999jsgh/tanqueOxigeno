@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrarBotella"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+      <Spinner
+          android:id="@+id/Spinnercliente_id"
+          android:layout_width="match_parent"
+          android:layout_height="50dp">
+      </Spinner>
+        <TextView
+            android:text="Tamaño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <Spinner
+            android:id="@+id/Spinnertamano_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </Spinner>
+        <TextView
+            android:text="Estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <Spinner
+            android:id="@+id/Spinnerestado_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </Spinner>
+
+        <TextView
+            android:text="Codigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/codigo"
+            android:text="fsd651f6s5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:importantForAutofill="no">
+        </EditText>
+
+        <TextView
+            android:text="Valor de Manometro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/valorManometro"
+            android:text="10000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </EditText>
+
+        <TextView
+            android:text="Valor Recarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/valorRecarga"
+            android:text="20000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </EditText>
+
+        <TextView
+            android:text="Fecha de Recarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/fechaRecarga"
+            android:text="2022-05-04"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </EditText>
+
+        <TextView
+            android:text="Fecha de Vencimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:id="@+id/fechaVencimiento"
+            android:text="2022-05-19"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </EditText>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnGuardarCliente"
+        android:text="Guardar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+    </Button>
+
+</LinearLayout>

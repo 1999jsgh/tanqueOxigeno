@@ -59,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void registar() {
-        Intent intent=new Intent (this, RegistarCliente.class);
+        Intent intent = new Intent(this, RegistrarCliente.class);
         startActivity(intent);
     }
+
 
     private void obtenerDatos(String user, String contrasena) {
 
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<Cliente>> call, Response<ArrayList<Cliente>> response) {
                 if(response.isSuccessful()) {
-                    Globalvar.datosCliente= response.body();
+                    Globalvar.datosCliente = response.body();
                     Log.e("CLIENTE", String.valueOf(response.body()));
                     for(int i=0; i<Globalvar.datosCliente.size(); i++){
                         Cliente cliente1=Globalvar.datosCliente.get(i);
@@ -111,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void datosBotellasCliente(int idCliente) {
-        Log.e("LLAMADOINTENTT","-------------------->");
         Intent intent = new Intent(this, Principal.class);
         intent.putExtra("cliente_id",idCliente);
         startActivity(intent);

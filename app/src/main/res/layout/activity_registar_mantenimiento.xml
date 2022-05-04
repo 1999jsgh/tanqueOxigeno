@@ -4,7 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RegistarMantenimiento">
+
+    <TextView
+        android:text="Botella"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+    </TextView>
+    <TextView
+        android:id="@+id/botella_id"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+    </TextView>
+    <TextView
+        android:text="Tipo de Mantenimiento"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </TextView>
+    <EditText
+        android:id="@+id/tipoMantenimiento"
+        android:text="10000"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </EditText>
+    <TextView
+        android:text="Fecha de Mantenimiento"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+    </TextView>
+    <EditText
+        android:id="@+id/fechaMantenimiento"
+        android:text="2022-05-04"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </EditText>
+    <TextView
+        android:text="Monto"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+    </TextView>
+    <EditText
+        android:id="@+id/monto"
+        android:text="200000"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </EditText>
+    <Button
+        android:id="@+id/btnGuardarMantenimiento"
+        android:text="Guardar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+    </Button>
 
     
 
