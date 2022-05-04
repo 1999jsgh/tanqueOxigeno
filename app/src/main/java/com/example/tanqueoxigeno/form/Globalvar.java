@@ -9,4 +9,6 @@ public class Globalvar {
 
     public static ArrayList<Cliente> datosCliente = new ArrayList<>();
     public static ArrayList<Botella> botella = new ArrayList<>();
+
+
 }

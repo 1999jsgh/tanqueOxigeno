@@ -49,7 +49,18 @@ public class MainActivity extends AppCompatActivity {
             obtenerDatos(e_correo.getText().toString(),e_contra.getText().toString());
             }
         });
+        b_registros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              registar();
+            }
+        });
 
+    }
+
+    private void registar() {
+        Intent intent=new Intent (this, RegistarCliente.class);
+        startActivity(intent);
     }
 
     private void obtenerDatos(String user, String contrasena) {

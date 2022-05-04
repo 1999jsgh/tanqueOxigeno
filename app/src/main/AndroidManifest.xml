@@ -15,8 +15,18 @@
         android:theme="@style/Theme.TanqueOxigeno"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Principal"
+            android:name=".RegistarMantenimiento"
             android:exported="false" />
+        <activity
+            android:name=".RegistrarVenta"
+            android:exported="false" />
+        <activity
+            android:name=".venta.Venta"
+            android:exported="false" />
+        <activity
+            android:name=".botella.BotellaDetalles"
+            android:exported="false" />
+        <activity android:name=".Principal" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

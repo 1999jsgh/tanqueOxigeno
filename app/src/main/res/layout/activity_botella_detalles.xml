@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".botella.BotellaDetalles">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Botella"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="tipoTamano"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="tipoEstado"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="codigo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="valorManometro"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="valorRecarga"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="fechaRecarga"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
+            android:text="fechaVencimiento"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/botella_id"
+            android:text="Botella"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/tipoTamano"
+            android:text="tipoTamano"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/tipoEstado"
+        android:text="tipoEstado"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+    </EditText>
+        <EditText
+            android:id="@+id/codigo"
+            android:text="codigo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/valorManometro"
+            android:text="valorManometro"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/valorRecarga"
+            android:text="valorRecarga"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/fechaRecarga"
+            android:text="fechaRecarga"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+        <EditText
+            android:id="@+id/fechaVencimiento"
+            android:text="fechaVencimiento"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints">
+
+        </EditText>
+    </LinearLayout>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Borrar">
+
+        </Button>
+        <Button
+            android:id="@+id/btnVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vender">
+
+        </Button>
+        <Button
+            android:id="@+id/btnMantenimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mantenimiento">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
