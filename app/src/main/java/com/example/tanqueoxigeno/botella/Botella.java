@@ -2,30 +2,15 @@ package com.example.tanqueoxigeno.botella;
 
 public class Botella {
     private int botella_id;
-    private int cliente_id;
     private int tamano_id;
     private int estado_id;
+    private String tipoTamano;
+    private String tipoEstado;
     private String codigo;
     private String valorManometro;
     private String valorRecarga;
     private String fechaRecarga;
     private String fechaVencimiento;
-
-    public int getBotella_id() {
-        return botella_id;
-    }
-
-    public void setBotella_id(int botella_id) {
-        this.botella_id = botella_id;
-    }
-
-    public int getCliente_id() {
-        return cliente_id;
-    }
-
-    public void setCliente_id(int cliente_id) {
-        this.cliente_id = cliente_id;
-    }
 
     public int getTamano_id() {
         return tamano_id;
@@ -41,6 +26,30 @@ public class Botella {
 
     public void setEstado_id(int estado_id) {
         this.estado_id = estado_id;
+    }
+
+    public int getBotella_id() {
+        return botella_id;
+    }
+
+    public void setBotella_id(int botella_id) {
+        this.botella_id = botella_id;
+    }
+
+    public String getTipoTamano() {
+        return tipoTamano;
+    }
+
+    public void setTipoTamano(String tipoTamano) {
+        this.tipoTamano = tipoTamano;
+    }
+
+    public String getTipoEstado() {
+        return tipoEstado;
+    }
+
+    public void setTipoEstado(String tipoEstado) {
+        this.tipoEstado = tipoEstado;
     }
 
     public String getCodigo() {
@@ -87,9 +96,10 @@ public class Botella {
     public String toString() {
         return "Botella{" +
                 "botella_id=" + botella_id +
-                ", cliente_id=" + cliente_id +
                 ", tamano_id=" + tamano_id +
                 ", estado_id=" + estado_id +
+                ", tipoTamano='" + tipoTamano + '\'' +
+                ", tipoEstado='" + tipoEstado + '\'' +
                 ", codigo='" + codigo + '\'' +
                 ", valorManometro='" + valorManometro + '\'' +
                 ", valorRecarga='" + valorRecarga + '\'' +

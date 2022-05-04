@@ -2,6 +2,7 @@ package com.example.tanqueoxigeno.form;
 
 import com.example.tanqueoxigeno.botella.Botella;
 import com.example.tanqueoxigeno.cliente.Cliente;
+import com.example.tanqueoxigeno.venta.Venta;
 
 import java.util.ArrayList;
 
@@ -24,5 +25,13 @@ public interface Api {
     @POST("add.php")
     @Headers("Content-Type:application/json;charset=UTF-8")
     Call<String>registrarCliente(@Body RequestBody body);
+
+    @POST("delete.php")
+    @Headers("Content-Type:application/json;charset=UTF-8")
+    Call <Integer> borrarBotella(@Body RequestBody body);
+
+    @POST("add.php")
+    @Headers("Content-Type:application/json;charset=UTF-8")
+    Call <ArrayList<Venta>> registarVenta(@Body RequestBody body);
 
 }

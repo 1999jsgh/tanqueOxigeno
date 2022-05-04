@@ -1,6 +1,7 @@
 package com.example.tanqueoxigeno.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tanqueoxigeno.R;
 import com.example.tanqueoxigeno.botella.Botella;
+import com.example.tanqueoxigeno.botella.BotellaDetalles;
 
 import java.util.ArrayList;
 
@@ -64,7 +66,7 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
         void onClick(View view, int position);
     }
 
-    public  class ViewHolder extends RecyclerView.ViewHolder {
+    public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView botella_id;
         private TextView codigo;
         private TextView valorManometro;
@@ -76,6 +78,29 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
             codigo=itemView.findViewById(R.id.codigo);
             valorManometro=itemView.findViewById(R.id.valorManometro);
             valorRecarga=itemView.findViewById(R.id.valorRecarga);
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            int position = getAdapterPosition();
+            Intent intent = new Intent(context, BotellaDetalles.class);
+            intent.putExtra("botella_id", dataset.get(position).getBotella_id());
+            intent.putExtra("tamano_id", dataset.get(position).getTamano_id());
+            intent.putExtra("tipoTamano", dataset.get(position).getTipoTamano());
+            intent.putExtra("estado_id", dataset.get(position).getEstado_id());
+            intent.putExtra("tipoEstado", dataset.get(position).getTipoEstado());
+            intent.putExtra("codigo", dataset.get(position).getCodigo());
+            intent.putExtra("valorManometro", dataset.get(position).getValorManometro());
+            intent.putExtra("valorRecarga", dataset.get(position).getValorRecarga());
+            intent.putExtra("fechaRecarga", dataset.get(position).getFechaRecarga());
+            intent.putExtra("fechaVencimiento", dataset.get(position).getFechaVencimiento());
+
+            Log.e("ID","------------->"+dataset.get(position).getBotella_id());
+
+            context.startActivity(intent);
 
         }
     }

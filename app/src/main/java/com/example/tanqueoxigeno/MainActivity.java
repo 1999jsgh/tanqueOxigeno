@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("tamanoSize","-------------->"+Globalvar.datosCliente.size());
                         }
                     }
-
                 }else{
                     Log.e("entreElse", "-------->");
                    // mensaje("else wey");
