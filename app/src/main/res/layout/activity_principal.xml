@@ -7,7 +7,7 @@
     tools:context=".Principal">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnVencimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="vencimiento"
@@ -21,7 +21,7 @@
         android:layout_height="288dp"
         android:layout_marginTop="264dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/btnVencimiento"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 

@@ -36,6 +36,7 @@ public class Principal extends AppCompatActivity {
     private RecyclerView recyclerview;
     private Button btnVencimiento;
     private Button btnBotella;
+
     private ListaBotellaAdapter listaBotellaAdapter;
     private ListaBotellaAdapter.RecyclerViewClickListener listener;
 
@@ -46,8 +47,10 @@ public class Principal extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         recyclerview= findViewById(R.id.recyclerview);
+
         btnVencimiento=findViewById(R.id.button);
         btnBotella=findViewById(R.id.btnBotella);
+        btnVencimiento=findViewById(R.id.btnVencimiento);
 
 
         listaBotellaAdapter=new ListaBotellaAdapter(this, listener);
@@ -73,7 +76,7 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-    btnBotella.setOnClickListener(new View.OnClickListener() {
+        btnBotella.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             datosEstadoTamano();
@@ -81,7 +84,12 @@ public class Principal extends AppCompatActivity {
         }
     });
 
+        btnVencimiento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
 
         setOnClickListiner();
     }
