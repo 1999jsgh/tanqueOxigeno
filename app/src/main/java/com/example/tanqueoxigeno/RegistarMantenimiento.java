@@ -41,7 +41,6 @@ public class RegistarMantenimiento extends AppCompatActivity {
 
         Bundle extras=this.getIntent().getExtras();
         String botellaId= String.valueOf(extras.getString("botella_id"));
-        Log.e("IDmantenimiento",botellaId);
 
         botella_id.setText(botellaId);
 

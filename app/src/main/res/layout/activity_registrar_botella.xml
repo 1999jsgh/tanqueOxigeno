@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".RegistrarBotella"
-    tools:ignore="HardcodedText">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,7 +109,7 @@
 
 
     <Button
-        android:id="@+id/btnGuardarCliente"
+        android:id="@+id/btnGuardarBotella"
         android:text="Guardar"
         android:layout_width="match_parent"
         android:layout_height="60dp">
