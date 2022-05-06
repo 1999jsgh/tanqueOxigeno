@@ -31,6 +31,10 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
         dataset=new ArrayList<>();
     }
 
+    public ListaBotellaAdapter() {
+
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -56,7 +60,6 @@ public class ListaBotellaAdapter extends RecyclerView.Adapter<ListaBotellaAdapte
     public void adicionarListaBotella(ArrayList<Botella> listaBotella) {
 
             Log.e("lista","---->"+listaBotella);
-
         dataset.addAll(listaBotella);
         notifyDataSetChanged();
     }

@@ -53,4 +53,12 @@ public interface Api {
     @Headers("Content-Type:application/json;charset=UTF-8")
     Call <ArrayList<Botella>> registrarBotella(@Body RequestBody body);
 
+    @POST("ventaFecha.php")
+    @Headers("Content-Type:application/json;charset=UTF-8")
+    Call <ArrayList<Venta>> datosVentaFecha(@Body RequestBody body);
+
+    @GET("datos.php")
+    @Headers("Content-Type:application/json;charset=UTF-8")
+    Call <ArrayList<Venta>> datosVenta();
+
 }

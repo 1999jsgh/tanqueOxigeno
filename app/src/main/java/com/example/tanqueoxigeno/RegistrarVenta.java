@@ -2,12 +2,14 @@ package com.example.tanqueoxigeno;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tanqueoxigeno.botella.Botella;
 import com.example.tanqueoxigeno.form.Api;
@@ -62,11 +64,6 @@ public class RegistrarVenta extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//    }
-
     private void obtenerDatosBotella(Integer botella_id, String monto, String fecha) {
 
         Retrofit retrofit= new Retrofit.Builder()
@@ -94,7 +91,7 @@ public class RegistrarVenta extends AppCompatActivity {
           public void onResponse(Call<ArrayList<Venta>> call, Response<ArrayList<Venta>> response) {
               if(response.isSuccessful()){
                   Globalvar.venta=response.body();
-
+                  Toast toast = Toast.makeText(getApplicationContext(),"guardado",Toast.LENGTH_LONG);
               }
 
           }

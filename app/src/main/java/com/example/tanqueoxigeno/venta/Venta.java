@@ -1,9 +1,18 @@
 package com.example.tanqueoxigeno.venta;
 
 public class Venta {
+    private int venta_id;
     private int botella_id;
     private String monto;
     private String fecha;
+
+    public int getVenta_id() {
+        return venta_id;
+    }
+
+    public void setVenta_id(int venta_id) {
+        this.venta_id = venta_id;
+    }
 
     public int getBotella_id() {
         return botella_id;
@@ -32,7 +41,8 @@ public class Venta {
     @Override
     public String toString() {
         return "Venta{" +
-                "botella_id=" + botella_id +
+                "venta_id=" + venta_id +
+                ", botella_id=" + botella_id +
                 ", monto='" + monto + '\'' +
                 ", fecha='" + fecha + '\'' +
                 '}';

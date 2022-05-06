@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tanqueoxigeno.Principal;
 import com.example.tanqueoxigeno.R;
@@ -43,14 +45,14 @@ public class BotellaDetalles extends AppCompatActivity {
         Button btnBorrar = findViewById(R.id.btnBorrar);
         Button btnVenta = findViewById(R.id.btnVenta);
         Button btnMantenimiento=findViewById(R.id.btnMantenimiento);
-        EditText botella_id=findViewById(R.id.botella_id);
-        EditText tipoTamano=findViewById(R.id.tipoTamano);
-        EditText tipoEstado=findViewById(R.id.tipoEstado);
-        EditText codigo=findViewById(R.id.codigo);
-        EditText valorManometro=findViewById(R.id.valorManometro);
-        EditText valorRecarga=findViewById(R.id.valorRecarga);
-        EditText fechaRecarga=findViewById(R.id.fechaRecarga);
-        EditText fechaVencimiento=findViewById(R.id.fechaVencimiento);
+        TextView botella_id=findViewById(R.id.botella_id);
+        TextView tipoTamano=findViewById(R.id.tipoTamano);
+        TextView tipoEstado=findViewById(R.id.tipoEstado);
+        TextView codigo=findViewById(R.id.codigo);
+        TextView valorManometro=findViewById(R.id.valorManometro);
+        TextView valorRecarga=findViewById(R.id.valorRecarga);
+        TextView fechaRecarga=findViewById(R.id.fechaRecarga);
+        TextView fechaVencimiento=findViewById(R.id.fechaVencimiento);
 
         Bundle extras=this.getIntent().getExtras();
         String botellaId= String.valueOf(extras.getInt("botella_id"));
@@ -155,6 +157,7 @@ public class BotellaDetalles extends AppCompatActivity {
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if(response.isSuccessful()){
                     Globalvar.botella_id=response.body();
+                    Toast toast = Toast.makeText(getApplicationContext(),"Eliminado",Toast.LENGTH_LONG);
                 }
 
             }

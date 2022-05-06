@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tanqueoxigeno.form.Api;
 import com.example.tanqueoxigeno.form.Globalvar;
@@ -80,7 +81,7 @@ public class RegistarMantenimiento extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Venta>> call, Response<ArrayList<Venta>> response) {
                 if(response.isSuccessful()){
                     Globalvar.venta=response.body();
-
+                    Toast toast = Toast.makeText(getApplicationContext(),"guardado",Toast.LENGTH_LONG);
                 }
 
             }

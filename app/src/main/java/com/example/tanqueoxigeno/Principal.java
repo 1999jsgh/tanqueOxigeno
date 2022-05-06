@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.tanqueoxigeno.adapter.ListaBotellaAdapter;
 import com.example.tanqueoxigeno.botella.Botella;
@@ -36,6 +37,8 @@ public class Principal extends AppCompatActivity {
     private RecyclerView recyclerview;
     private Button btnVencimiento;
     private Button btnBotella;
+    private EditText fechaAntes;
+    private EditText fechaDespues;
 
     private ListaBotellaAdapter listaBotellaAdapter;
     private ListaBotellaAdapter.RecyclerViewClickListener listener;
@@ -51,7 +54,8 @@ public class Principal extends AppCompatActivity {
         btnVencimiento=findViewById(R.id.button);
         btnBotella=findViewById(R.id.btnBotella);
         btnVencimiento=findViewById(R.id.btnVencimiento);
-
+        fechaAntes=findViewById(R.id.fechaAntes);
+        fechaDespues=findViewById(R.id.fechaDespues);
 
         listaBotellaAdapter=new ListaBotellaAdapter(this, listener);
         recyclerview.setAdapter(listaBotellaAdapter);
@@ -64,7 +68,6 @@ public class Principal extends AppCompatActivity {
         if(parametros!=null){
             try {
                 obtenerDatosBotella(parametros.getInt("cliente_id"));
-
             }catch(Exception e){
 
             }
@@ -84,13 +87,6 @@ public class Principal extends AppCompatActivity {
         }
     });
 
-        btnVencimiento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
         setOnClickListiner();
     }
 
@@ -102,11 +98,9 @@ public class Principal extends AppCompatActivity {
     }
 
     private void registrarVencimiento() {
-        Retrofit retrofit= new Retrofit.Builder()
-                .baseUrl("http://orangecodecol.com/Botellasgas/botella/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
+        Intent intent = new Intent(this, FechaVenta.class);
+        startActivity(intent);
 
 
     }
@@ -130,21 +124,6 @@ public class Principal extends AppCompatActivity {
         };
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        Bundle parametros=this.getIntent().getExtras();
-//        if(parametros!=null){
-//            try {
-//                obtenerDatosBotella(Globalvar.cliente_id);
-//                Log.e("IdCliente","--------->"+Globalvar.cliente_id);
-//
-//            }catch(Exception e){
-//
-//            }
-//        }
-//    }
 
     private void obtenerDatosBotella(int cliente_id) {
         Retrofit retrofit= new Retrofit.Builder()

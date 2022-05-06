@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.tanqueoxigeno.botella.Botella;
 import com.example.tanqueoxigeno.cliente.Cliente;
@@ -106,15 +107,14 @@ public class RegistrarBotella extends AppCompatActivity {
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
         Api myCall= retrofit.create(Api.class);
         Call<ArrayList<Botella>> call =myCall.registrarBotella(body);
-
-
-      call.enqueue(new Callback<ArrayList<Botella>>() {
+        call.enqueue(new Callback<ArrayList<Botella>>() {
           @Override
           public void onResponse(Call<ArrayList<Botella>> call, Response<ArrayList<Botella>> response) {
 
               if(response.isSuccessful()){
                   Globalvar.botella=response.body();
                     Log.e("BODYBotella", String.valueOf(response.body()));
+                  Toast toast = Toast.makeText(getApplicationContext(),"guardado",Toast.LENGTH_LONG);
               }
           }
 

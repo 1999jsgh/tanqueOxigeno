@@ -75,70 +75,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <EditText
+        <TextView
             android:id="@+id/botella_id"
             android:text="Botella"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/tipoTamano"
             android:text="tipoTamano"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/tipoEstado"
         android:text="tipoEstado"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         tools:ignore="MissingConstraints">
 
-    </EditText>
-        <EditText
+    </TextView>
+        <TextView
             android:id="@+id/codigo"
             android:text="codigo"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/valorManometro"
             android:text="valorManometro"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/valorRecarga"
             android:text="valorRecarga"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/fechaRecarga"
             android:text="fechaRecarga"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/fechaVencimiento"
             android:text="fechaVencimiento"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:ignore="MissingConstraints">
 
-        </EditText>
+        </TextView>
     </LinearLayout>
 </LinearLayout>
 
